@@ -1,0 +1,30 @@
+<main style="height: 100%; display: table-row;">
+  <div class="my-5 d-flex justify-content-center">
+    <h1 class="d-flex justify-content-center">Поиск достопримечательностей</h1>
+  </div>
+  <form name='urlForm' class="d-flex justify-content-center my-5"
+    style="margin-top: 10% !important, flex-direction: column">
+    <div class="card text-center" style="width: 50em;">
+      <div class="card-body">
+        <h6 class="card-title">Введите город</h6>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="url" name="url" placeholder="Moscow">
+        </div>
+        <h6 class="card-title">Введите радиус поиска в метрах</h6>
+        <div class="mb-3">
+          <input type="number" class="form-control" id="radius" name="radius" placeholder="500">
+        </div>
+        <button type="submit" id="searchBut" class="btn btn-primary">найти</button>
+
+
+      </div>
+    </div>
+  </form>
+  <div class="d-flex justify-content-center">
+        <button type="submit" id="searchPlus" class="btn btn-primary" style="display:none ;">загрузить еще</button>
+  </div>
+
+  <div data-allSearch class="my-5" style="margin: 0 auto;"></div>
+  <div id="map" style="width:90%; margin: 0 auto; height:600px"></div>
+  {{!-- <input type="button" id="destroyButton" value="Удалить карту" /> --}}
+</main>

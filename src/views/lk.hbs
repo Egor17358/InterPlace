@@ -1,0 +1,68 @@
+<h2 class="my-5 d-flex justify-content-center">Личный кабинет</h2>
+
+
+<main style="height: 100%; display: table-row;">
+  <div class="d-flex justify-content-center">
+    <h2 class="my-3" style="margin-right: 35%;">Здравствуйте, {{name}}!</h2>
+  </div>
+
+  {{#if isadmin}}
+  <form name="searchEmailuser">
+    <div class="mb-3 d-flex justify-content-center" style="margin-top: 2%; margin-right: 39%; !important ">
+      <p>Введите e-mail пользователя:</p>
+    </div>
+    <div class="mb-3 d-flex justify-content-center" style="margin-right: 17%; !important ">
+      <input type="text" class="form-control" id="emailuser" name="email" style="width: 30em;"
+        placeholder="example@mail.ru">
+      <button class="btn btn-primary" style="width: 8em; margin-left: 2%">Найти</button>
+      {{!-- <a href="#" class="btn btn-primary" style="width: 8em; margin-left: 2%">Найти</a> --}}
+    </div>
+  </form>
+  {{/if}}
+  <form class="d-flex justify-content-center" style="!important">
+    <div class="card text-center col-md-8" style="width: 60em;">
+      <h3 class="my-3 d-flex justify-content-center">Ваши данные</h3>
+      <div class="mb-3" style="width: 60em;">
+        <div>Имя: {{name}} &#8195;&#8195; Фамилия: {{lastName}}</div>
+      </div>
+      <h3 class="my-2 d-flex justify-content-center" data-title></h3>
+      <div data-info></div>
+
+      <div data-role class="my-1 form-check form-switch" style="display:none">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+        <div data-butName></div>
+      </div>
+
+    </div>
+    {{!-- </div> --}}
+  </form>
+  <form class="d-flex justify-content-center" style="margin-top: 2% !important">
+    <div class="card text-center col-md-8" style="width: 60em;">
+      <h3 class="my-5 d-flex justify-content-center">История запросов</h3>
+      <div class="mb-3" style="width: 60em;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Время запроса</th>
+              <th scope="col">Сайт запроса</th>
+              <th scope="col">Результат</th>
+            </tr>
+          </thead>
+          <tbody data-table>
+            {{#each search}}
+            <tr>
+              <th scope="row">{{this.createdAt}}</th>
+              <td>{{this.url}}</td>
+              <td>{{this.result}}</td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+  </form>
+</main>
